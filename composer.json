@@ -1,11 +1,11 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "hellsss/wiremind-publicapi",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Project for call public api and get some statistics",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle"
+            "": "src/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
@@ -14,17 +14,20 @@
         "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.2",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
         "incenteev/composer-parameter-handler": "^2.0",
+        "knplabs/github-api": "^2.12",
+        "php-http/guzzle6-adapter": "^1.1",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
-        "symfony/monolog-bundle": "^3.1.0",
+        "symfony/monolog-bundle": "3.4.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.6.4",
         "symfony/symfony": "3.4.*",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+        "webonyx/graphql-php": "^0.13.8"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -47,9 +50,6 @@
         ]
     },
     "config": {
-        "platform": {
-            "php": "5.6"
-        },
         "sort-packages": true
     },
     "extra": {
