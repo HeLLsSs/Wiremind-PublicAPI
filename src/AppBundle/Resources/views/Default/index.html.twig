@@ -1,0 +1,68 @@
+{% extends "@App/layout.html.twig" %}
+
+{% block title %}Accueil{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/custom.css') }}">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+          rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/filter-ajax.js') }}"></script>
+{% endblock javascripts %}
+
+{% block content %}
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-lg-9 mx-auto text-white text-center">
+                <h1 class="display-4">Wiremind</h1>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h5 class="font-weight-light mb-4 font-italic text-white">Github API</h5>
+                <div class="bg-white p-5 rounded shadow">
+                    <form action="{{ path('search') }}" method="post">
+
+                        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                            <div class="input-group">
+                                <input type="search" id="filter" name="filter" placeholder="Commencé à taper votre recherche"
+                                       class="form-control border-0 bg-light">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-link text-primary"><i
+                                                class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr/>
+                        <div class="mb-4">
+                            <h6>Filtre de recherche</h6>
+                            <div class="input-group" id="checkbox-group">
+                                <input id="repositories" type="checkbox" name="checkbox[repositories]" checked data-toggle="toggle"
+                                       data-on="Repositories" data-off="!Repositories" data-onstyle="outline-success"
+                                       data-offstyle="outline-secondary" data-size="xs">
+                                {#                                <input id="users" type="checkbox" data-toggle="toggle" data-on="Users" data-off="!Users" data-onstyle="outline-success" data-offstyle="outline-secondary" data-size="xs">#}
+                                {#                                <input id="issues" type="checkbox" data-toggle="toggle" data-on="Issues" data-off="!Issues" data-onstyle="outline-success" data-offstyle="outline-secondary" data-size="xs">#}
+                                {#                                <input id="code" type="checkbox" data-toggle="toggle" data-on="Code" data-off="!Code" data-onstyle="outline-success" data-offstyle="outline-secondary" data-size="xs">#}
+                                {#                                <input id="commits" type="checkbox" data-toggle="toggle" data-on="Commits" data-off="!Commits" data-onstyle="outline-success" data-offstyle="outline-secondary" data-size="xs">#}
+                                {#                                <input id="topics" type="checkbox" data-toggle="toggle" data-on="Topics" data-off="!Topics" data-onstyle="outline-success" data-offstyle="outline-secondary" data-size="xs">#}
+                            </div>
+                        </div>
+                    </form>
+                    <hr/>
+                    <p>Nombre de résultat : <span id="nbResult">0</span> <em>(cliquer sur la loupe pour tous les
+                            voirs)</em></p>
+
+                    <ul class="list-group list-group-flush" id="previewResult">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

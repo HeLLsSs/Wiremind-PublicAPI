@@ -72,3 +72,5 @@ How To Install
 Requirements
 --------------
 Token GitHub : https://github.com/settings/tokens
+
+For better performance : Redis

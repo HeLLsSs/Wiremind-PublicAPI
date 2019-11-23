@@ -1,0 +1,28 @@
+{% extends "@App/layout.html.twig" %}
+
+{% block title %}Accueil{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+{% endblock javascripts %}
+
+{% block nav %}
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{path('homepage')}}">Accueil</a>
+    </nav>
+{% endblock nav %}
+
+{% block content %}
+    <div class="table-responsive">
+        {{ dump(datas) }}
+    </div>
+{% endblock content %}
